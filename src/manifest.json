@@ -1,0 +1,24 @@
+{
+  "name": "revddit language fix",
+  "short_name": "revddit lang",
+  "description": "Allows revddit.com to work properly when the browser/OS language is not set to english.",
+  "version": "0.0.0.1",
+  "permissions": [
+    "webRequest",
+    "webRequestBlocking",
+    "https://revddit.com/*",
+    "https://*.reddit.com/*"
+  ],
+  "icons": { "128": "icons/128.png",
+    "48": "icons/48.png",
+    "16": "icons/16.png"
+  },
+  "background": {
+    "scripts": ["background.js"]
+  },
+  "content_scripts": [{
+    "matches": ["https://revddit.com/*"],
+    "js": ["content.js"]
+  }],
+  "manifest_version": 2
+}

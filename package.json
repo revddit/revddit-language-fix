@@ -1,0 +1,38 @@
+{
+  "name": "revddit-language-fix",
+  "version": "1.0.0",
+  "description": "Allows revddit.com to work properly when the browser/OS language is not set to english.",
+  "main": "index.js",
+  "license": "GPL-3.0",
+  "private": true,
+  "devDependencies": {
+    "@babel/core": "^7.5.5",
+    "@babel/preset-env": "^7.5.5",
+    "@babel/register": "^7.6.2",
+    "babel-loader": "^8.0.6",
+    "babel-plugin-add-module-exports": "^1.0.2",
+    "concurrently": "^4.1.2",
+    "copy-webpack-plugin": "^5.0.4",
+    "disable-output-webpack-plugin": "^1.0.1",
+    "webpack": "^4.38.0",
+    "webpack-cli": "^3.3.6",
+    "webpack-extension-reloader": "https://github.com/rhaksw/webpack-extension-reloader.git"
+  },
+  "scripts": {
+    "build": "yarn clean && yarn manifest-all && yarn build-all",
+    "start": "yarn manifest-chrome && concurrently \"yarn manifest-chrome --watch\" \"NODE_ENV=development FORCHROMEDEV=true webpack --watch\"",
+    "start-firefox": "yarn manifest-firefox && concurrently \"yarn manifest-firefox --watch\" \"NODE_ENV=development FORFIREFOXDEV=true webpack --watch\"",
+    "build-all": "yarn build-production && yarn build-chrome && yarn build-firefox",
+    "build-production": "NODE_ENV=production webpack && (cd dist && zip -r ../extension.zip .)",
+    "build-chrome": "NODE_ENV=production FORCHROMEDEV=true webpack",
+    "build-firefox": "NODE_ENV=production FORCHROMEDEV=true webpack;",
+    "manifest-chrome": "NODE_ENV=development FORCHROMEDEV=true webpack --config build-manifest.webpack.config.js",
+    "manifest-firefox": "NODE_ENV=development FORFIREFOXDEV=true webpack --config build-manifest.webpack.config.js",
+    "manifest": "NODE_ENV=production webpack --config build-manifest.webpack.config.js",
+    "manifest-all": "yarn manifest && yarn manifest-chrome && yarn manifest-firefox",
+    "clean": "rimraf manifest dist dist-dev-chrome dist-dev-firefox extension.zip"
+  },
+  "dependencies": {
+    "rimraf": "^3.0.0"
+  }
+}
