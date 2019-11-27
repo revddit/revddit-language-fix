@@ -1,7 +1,7 @@
 {
-  "name": "revddit-language-fix",
+  "name": "reveddit-language-fix",
   "version": "1.0.0",
-  "description": "Allows revddit.com to work properly when the browser/OS language is not set to english.",
+  "description": "Allows reveddit.com to work properly when the browser/OS language is not set to english.",
   "main": "index.js",
   "license": "GPL-3.0",
   "private": true,

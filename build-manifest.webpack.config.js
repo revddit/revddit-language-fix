@@ -17,7 +17,7 @@ function modify(buffer) {
   if (process.env.FORFIREFOXDEV) {
     manifest.browser_specific_settings = {
       "gecko": {
-        "id": "revddit-ext@revddit.com"
+        "id": "reveddit-lang@reveddit.com"
       }
     }
   }

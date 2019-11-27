@@ -1,5 +1,5 @@
-# revddit-language-fix
-A browser extension that allows revddit.com to work properly when the browser/OS language is not set to english.
+# reveddit-language-fix
+A browser extension that allows reveddit.com to work properly when the browser/OS language is not set to english.
 
 ## Installation
 
