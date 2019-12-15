@@ -1,4 +1,8 @@
-# reveddit-language-fix
+# Deprecated
+
+This extension is deprecated. [Real-time](https://github.com/reveddit/real-time-extension) contains the same functionality.
+
+## About
 A browser extension that allows reveddit.com to work properly when the browser/OS language is not set to english.
 
 ## Installation
